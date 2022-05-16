@@ -77,7 +77,7 @@ cd ./elixir_fuel_calculator
 
 // build project:
 
-run iex -S mix
+iex -S mix
 
 // enter in console these commands:
 
