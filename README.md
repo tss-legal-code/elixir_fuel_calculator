@@ -64,3 +64,40 @@ arguments: 75432, [[:launch, 9.807], [:land, 1.62], [:launch, 1.62], [:land, 3.7
 P.S. It is very important to create not just working code but also maintainable and readable code, so take your time and show your best.
 
 ! Please, upload your solution to GitHub / another hosting and provide a link.
+
+# HOW TO TEST THIS PROJECT
+
+## to test MANUALLY do:
+
+// clone this project from GitHub
+git clone https://github.com/tss-legal-code/elixir_fuel_calculator.git
+
+cd ./elixir_fuel_calculator
+
+// build project:
+run iex -S mix
+
+// enter in console these commands:
+
+FuelCalculator.FuelForRoute.calc(28801, [[:launch, 9.807], [:land, 1.62], [:launch, 1.62], [:land, 9.807]])
+// correct output is: 51898
+
+FuelCalculator.FuelForRoute.calc(14606, [[:launch, 9.807], [:land, 3.711], [:launch, 3.711], [:land, 9.807]])
+// correct output is: 33388
+
+FuelCalculator.FuelForRoute.calc(75432, [[:launch, 9.807], [:land, 1.62], [:launch, 1.62], [:land, 3.711], [:launch, 3.711], [:land, 9.807]])
+// correct output is: 212161
+
+
+## to test AUTOMATICALLY do:
+
+// clone this project from GitHub
+git clone https://github.com/tss-legal-code/elixir_fuel_calculator.git
+
+cd ./elixir_fuel_calculator
+
+mix test
+
+PS: output may be come more verbose -- just uncomment:
+1) line 43 in ./lib/FuelForRoute.ex and/or
+2) line 23 in ./lib/FuelForMassOfFuel.ex

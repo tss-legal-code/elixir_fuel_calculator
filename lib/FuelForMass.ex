@@ -1,4 +1,7 @@
 defmodule FuelForMass do
+  @type operation() :: :launch | :land
+
+  @spec calc(number(), number(), operation()) :: integer
   def calc(mass, gravity_acceleration, operation) do
     apply(FuelForMass, operation, [mass, gravity_acceleration])
   end

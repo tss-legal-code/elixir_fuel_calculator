@@ -1,5 +1,7 @@
 defmodule FuelForMassOfFuel do
-  # TODO spec for operation
+  @type operation() :: :launch | :land
+
+  @spec calc(number(), number(), operation()) :: integer
   def calc(mass, gravity_acceleration, operation) do
     internal_calc(mass, gravity_acceleration, operation, 0)
   end
@@ -18,8 +20,7 @@ defmodule FuelForMassOfFuel do
       end
 
     new_extra_fuel = extra_fuel + adequate_mass
-    # TODO test for calculation
-    IO.puts("#{to_string(mass)} fuel requires #{to_string(adequate_mass)} more fuel, total more: #{to_string(new_extra_fuel)}")
+    # IO.puts("#{to_string(mass)} fuel requires #{to_string(adequate_mass)} more fuel, total more: #{to_string(new_extra_fuel)}")
     internal_calc(new_mass, gravity_acceleration, operation, new_extra_fuel)
   end
 end
